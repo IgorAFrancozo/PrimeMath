@@ -168,7 +168,6 @@ class _CalculadoraWidgetState extends State<CalculadoraWidget> {
     setState(() {
       if (text == '=') {
         try {
-          // Substitua os caracteres × e ÷ por * e / respectivamente
           String equation = _equation.replaceAll('×', '*').replaceAll('÷', '/');
           Parser parser = Parser();
           Expression expression = parser.parse(equation);
@@ -242,7 +241,7 @@ class _CalculadoraWidgetState extends State<CalculadoraWidget> {
                     onTap: () => _onButtonPressed(button),
                     child: Container(
                       margin:
-                          const EdgeInsets.all(5.0), // Espaço entre os botões
+                          const EdgeInsets.all(5.0),
                       decoration: BoxDecoration(
                         color: button == 'C' ||
                                 button == '+' ||
@@ -252,7 +251,7 @@ class _CalculadoraWidgetState extends State<CalculadoraWidget> {
                             ? Colors.red
                             : Colors.blue,
                         borderRadius:
-                            BorderRadius.circular(10.0), // Borda arredondada
+                            BorderRadius.circular(10.0),
                       ),
                       child: Center(
                         child: Text(
