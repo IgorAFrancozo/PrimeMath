@@ -238,26 +238,30 @@ class _CalculadoraWidgetState extends State<CalculadoraWidget> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: buttons
             .map((button) => Expanded(
-                  child: InkWell(
-                    onTap: () => _onButtonPressed(button),
-                    child: Container(
-                      color: button == 'C' ||
-                              button == '+' ||
-                              button == '-' ||
-                              button == '×' ||
-                              button == '÷'
-                          ? Colors.red
-                          : Colors.blue,
-                      child: Center(
-                        child: Text(
-                          button,
-                          style: const TextStyle(
-                              fontSize: 34, color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                ))
+          child: InkWell(
+            onTap: () => _onButtonPressed(button),
+            child: Container(
+              margin: const EdgeInsets.all(5.0), // Espaço entre os botões
+              decoration: BoxDecoration(
+                color: button == 'C' ||
+                    button == '+' ||
+                    button == '-' ||
+                    button == '×' ||
+                    button == '÷'
+                    ? Colors.red
+                    : Colors.blue,
+                borderRadius: BorderRadius.circular(10.0), // Borda arredondada
+              ),
+              child: Center(
+                child: Text(
+                  button,
+                  style: const TextStyle(
+                      fontSize: 34, color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+        ))
             .toList(),
       ),
     );
